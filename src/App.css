@@ -1,22 +1,32 @@
-.App {
-  text-align: center;
+body {
+  height: 100vh;
 }
+.app-wrapper {
+  display: grid;
+  /* pseudo names of areas */
+  grid-template-areas: "h h" "n c";
+  /* there is two rows. The first = 60px; the second is 1fr */
+  grid-template-rows: 60px 1fr;
+  /* there is two columns. The first = 2fr; the second is 10fr */
+  grid-template-columns: 2fr 10fr;
+  /* distance between columns */
+  grid-gap: 10px; 
 
-.App-logo {
-  height: 40vmin;
+  /* width: 1200px; */
+  margin: 0 auto;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header {
+  grid-area: h;
+  background-color: #ebb3e3;
 }
-
-.App-link {
-  color: #09d3ac;
+.header img {
+  width: 40px;
+}
+.nav {
+  grid-area: n;
+  background-color: #ebb3e3;
+}
+.content {
+  grid-area: c;
+  background-image: linear-gradient(to bottom, #ebb3e3, #ffb5c8, #ffc0ac, #ffd49a, #e6e99f);
 }
