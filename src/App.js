@@ -30,7 +30,10 @@ const App = (props) => {
             render={ () => <Dialogs state={props.state.dialogsPage} />}
           />
           <Route exact path="/profile" 
-            render={ () => <Profile state={props.state.profilePage}/>}
+            render={ () => 
+              <Profile 
+                state={props.state.profilePage} 
+                addPost={props.addPost} /> }
           />
           <Route exact path="/news" render={ () => <News/>} />
           <Route exact path="/music" render={ () => <Music/>} />
