@@ -4,8 +4,24 @@ import d from './../Dialogs.module.scss';
 
 
 const Message = (props) => {
+
+    let textMessage = React.createRef();
+   
+    let sendMessage = () => {
+        let text = textMessage.current.value;
+        alert(text);
+    }
+
     return (
-        <div className={d.message}>{props.message}</div>
+        <div>
+            <div className={d.message}>{props.message}</div>
+            <div>
+                <textarea cols="30" rows="10" ref={textMessage}></textarea>
+            </div>
+            <div>
+                <button onClick={ sendMessage }>Send message</button>
+            </div>
+        </div> 
     );
 }
 
